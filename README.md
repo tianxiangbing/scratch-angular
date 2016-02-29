@@ -1,7 +1,7 @@
 # turntable-angular
-angularjs大转盘抽奖
+angularjs 刮刮乐
 
-    git clone https://github.com/tianxiangbing/turntable-angular.git
+    git clone https://github.com/tianxiangbing/scratch-angular.git
 
 #启动
 
