@@ -1,0 +1,21 @@
+{
+  "status": true,
+  "data": [
+    {
+      "img":"css/images/carouse-1.jpg",
+      "url":"http://www.baidu.com"
+    },
+    {
+      "img":"css/images/carouse-2.jpg",
+      "url":"http://www.baidu.com"
+    },
+    {
+      "img":"css/images/carouse-3.jpg",
+      "url":"http://www.baidu.com"
+    },
+    {
+      "img":"css/images/carouse-4.jpg",
+      "url":"http://www.baidu.com"
+    }
+  ]
+}

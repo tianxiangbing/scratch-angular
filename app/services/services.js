@@ -1,16 +1,19 @@
 "use strict";
 var services = angular.module('myApp.services',[]);
-services.service("getList",function($q,$http){
+services.service("service",function($q,$http){
     var data = {};
     return {
-        getNameList: function (uid) {
+        getList: function (uid) {
             return ajax(uid,'json/list.json');
         },
         getRecordList:function(uid){
             return ajax(uid,'json/myRecordList.json');
         },
         lottery:function(uid){
-            return ajax(uid,'json/ralate.json');
+            return ajax(uid,'json/scratch.json');
+        },
+        getGoodsList: function (uid) {
+            return ajax(uid,'json/goods-list.json');
         }
     }
     function ajax (uid,url){

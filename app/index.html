@@ -11,10 +11,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="components/dialog/dialog.css">
+  <link rel="stylesheet" href="components/carousel-image/carousel-image.css">
 
 </head>
 <body ng-controller="myController">
+<input type="hidden" id="lotteryNumber" value="3"/>
 <header></header>
+<lottery></lottery>
+<lottery-count counter="lotteryNumber"></lottery-count>
+<goods-list></goods-list>
+<rule class="rule"></rule>
+<goods-preview></goods-preview>
+<a href="#" class="link-btn"></a>
 <footer></footer>
 <div class="hide">
   <div class="message-box">
@@ -28,9 +36,9 @@
 <script src="components/angular/angular.min.js"></script>
 <script src="components/jquery/jquery.min.js"></script>
 <script src="components/dialog/dialog.js"></script>
-<script src="components/jQueryRotate/jQueryRotate.js"></script>
+<script src="components/lottery/lottery.js"></script>
+<script src="components/carousel-image/carousel-image.js"></script>
 <script src="app.js"></script>
-<script src="dist/template/template.js"></script>
 <script src="directives/directives.js"></script>
 <script src="services/services.js"></script>
 </body>
