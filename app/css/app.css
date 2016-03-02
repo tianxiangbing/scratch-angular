@@ -8,6 +8,9 @@ header{height:8.7rem;}
 #lotteryContainer{width:6.25rem;height: 1.88rem;position:relative;margin:0.25rem auto 0;}
 .message-box{width:7.5rem;height: 7.48rem;position:relative;background-size:100%;background-size:contain !important;}
 .message-box .close{display:block;position:absolute;width:58px;height:58px;right:0px;top:.1rem;cursor: pointer;}
+.msg-1{font-size:12px;width:7.5rem;height:12rem;background:url("images/sum-8.png") no-repeat center center;position:relative;}
+.msg-1 .money{position:absolute;top:5.11rem;left:2.28rem;width:3.83rem;height:1.83rem;line-height:1.83rem;text-align:center;color:#ed2d50;font-size:.8rem;}
+.msg-1 .history{width:3.95rem;position:absolute;top:8.5rem;left:2.12rem;color:#ed2d50;font-size:.25rem;height:2.2rem;overflow: auto;}
 
 .index-1{background:url("images/index-1.png") no-repeat center center;}
 .index-2{background:url("images/index-2.png") no-repeat center center;}
@@ -15,7 +18,7 @@ header{height:8.7rem;}
 .index-4{background:url("images/index-4.png") no-repeat center center;}
 .index-5{background:url("images/index-5.png") no-repeat center center;}
 .index-6{background:url("images/index-6.png") no-repeat center center;}
-.index-7{background:url("images/index-7.png") no-repeat center center;}+
+.index-7{background:url("images/index-7.png") no-repeat center center;}
 .index-8{background:url("images/index-8.png") no-repeat center center;}
 .index-9{background:url("images/index-9.png") no-repeat center center;}
 .index-10{background:url("images/index-10.png") no-repeat center center;}

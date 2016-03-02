@@ -82,7 +82,31 @@ directives.directive('goodsList',function(service){
         templateUrl:'template/goods-list.html',
         link:function(scope,element,attrs){
             service.getList(scope.uid).then(function(res){
-                scope.list = res.data;
+                //scope.list = res.data;
+                if(res.status){
+                    var data = res.data;
+                    var children = angular.element(element.children('.goods-list').children());
+                    console.log(children)
+                    if(data.a>0){
+                        children.eq(0).find('i').addClass('active').html(data.a);
+                    }
+                    if(data.b>0){
+                        children.eq(1).find('i').addClass('active').html(data.b);
+                    }
+                    if(data.c>0){
+                        children.eq(2).find('i').addClass('active').html(data.c);
+                    }
+                    if(data.d>0){
+                        children.eq(3).find('i').addClass('active').html(data.d);
+                    }
+                    scope.e= data.e;
+                    children.eq(4).bind('click',function(){
+                        var dialog = new Dialog();
+                        dialog.init({target:$('.msg-1'),show:true,fixed:true,mask:true});
+                    });
+                }else{
+                    alert(res.msg);
+                }
             });
         }
     }
@@ -104,7 +128,7 @@ directives.directive('onFinish',function($timeout){
            if(scope.$last===true){
                $timeout(function(){
                    scope.$emit('ngFinish');
-               })
+               });
            }
        }
    }

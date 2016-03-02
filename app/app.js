@@ -4,9 +4,9 @@ document.documentElement.style.fontSize = document.documentElement.clientWidth /
 angular.module('myApp', [
     "myApp.directives",
     "myApp.services"
-]).controller('myController',function($scope,service,$http){
+]).controller('myController',['$scope',function($scope){
     $scope.uid = $('#hd_uid').val();
 
     $scope.lotteryNumber = $('#lotteryNumber').val();
 
-});
+}]);
