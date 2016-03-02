@@ -46,8 +46,30 @@ module.exports = function(grunt){
             }
         }
     };
-
+    config.watch={
+        scripts:{
+            files:['app/app.js','app/directives/*.js'],
+            tasks:['default'],
+            options:{
+                livereload: true
+            }
+        },
+        html:{
+            files:['app/**/*.html'],
+            tasks:['default'],
+            options:{
+                livereload: true
+            }
+        },
+        css:{
+            files:['app/**/*.css'],
+            options:{
+                livereload: true
+            }
+        }
+    };
     grunt.initConfig(config);
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-usemin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');

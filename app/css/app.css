@@ -8,9 +8,16 @@ header{height:8.7rem;}
 #lotteryContainer{width:6.25rem;height: 1.88rem;position:relative;margin:0.25rem auto 0;}
 .message-box{width:7.5rem;height: 7.48rem;position:relative;background-size:100%;background-size:contain !important;}
 .message-box .close{display:block;position:absolute;width:58px;height:58px;right:0px;top:.1rem;cursor: pointer;}
+
 .msg-1{font-size:12px;width:7.5rem;height:12rem;background:url("images/sum-8.png") no-repeat center center;position:relative;}
 .msg-1 .money{position:absolute;top:5.11rem;left:2.28rem;width:3.83rem;height:1.83rem;line-height:1.83rem;text-align:center;color:#ed2d50;font-size:.8rem;}
 .msg-1 .history{width:3.95rem;position:absolute;top:8.5rem;left:2.12rem;color:#ed2d50;font-size:.25rem;height:2.2rem;overflow: auto;}
+
+.message-box .action{position:absolute;top:5.7rem;width:4.5rem;height:.63rem;left:1.5rem;}
+.action .virtual{display:block; width:2.8rem;height:.63rem;float:left;}
+.action .agin{display:block; width:1.7rem;height:.63rem;float:left;}
+.action-single .virtual{display:none;}
+.action-single .agin{width:4.4rem;}
 
 .index-1{background:url("images/index-1.png") no-repeat center center;}
 .index-2{background:url("images/index-2.png") no-repeat center center;}
@@ -43,6 +50,47 @@ header{height:8.7rem;}
 .rule{margin-top:2.35rem;font-size:.086rem;color:#cf1f1f;padding:0 .9rem;height:5.7rem;}
 .rule h2{text-align:center;margin:0 0 .1rem 0;}
 .rule p{line-height:.5rem;margin:0; }
-.carousel-content{width:7.26rem;height:3.23rem;margin:1.6rem auto 0;overlfow:hidden;}
+.carousel-content{width:7.26rem;height:3.23rem;margin:1.4rem auto 0;overlfow:hidden;}
 .carousel-image img{margin:0;width:7.26rem;height:3.23rem;}
-.link-btn{background:url("images/link-btn.png") no-repeat;display: block;margin:.2rem auto;width:3.8rem;height:.85rem;background-size: contain;}
+.link-btn{background:url("images/link-btn.png") no-repeat;display: block;margin:.2rem auto 0 auto;width:3.8rem;height:.85rem;background-size: contain;}
+
+@media screen and (min-width:750px){
+    body{background: url("images/bg-big.jpg") no-repeat center top;background-color:#fa407d ;}
+    .container{width:970px;margin:0 auto;padding-bottom:.2rem;}
+    header{height:4.5rem;}
+    .rule{margin-top:3rem;font-size:0;}
+    .goods-list{padding-left:0.1rem;}
+    .message-box .js-dialog-close{top:.5rem;width:80px;height:80px;}
+    .msg-0{width:501px;height:501px;}
+    .msg-1{width:785px;height:800px;}
+    .msg-1 .money{left:290px;top:340px;font-size: 60px;width:260px;height:120px;line-height: 120px;}
+    .msg-1 .history{top:560px;width:250px;height:200px; font-size:14px;line-height:24px;}
+    .message-box .action{top:2.97rem;left:.8rem;width:2.3rem;height:.3rem;}
+    .message-box .action .agin{height:.3rem;width:.85rem;}
+    .message-box .action-single .agin{width:2.3rem;height:.3rem;}
+    .message-box .action .virtual{width:1.4rem;height:.3rem;}
+    ::-webkit-scrollbar {
+        width: 14px;
+        height: 14px;
+    }
+
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-thumb {
+        border-radius: 999px;
+        border: 5px solid transparent;
+    }
+
+    ::-webkit-scrollbar-track {
+        box-shadow: 1px 1px 5px rgba(0,0,0,.2) inset;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        min-height: 20px;
+        background-clip: content-box;
+        box-shadow: 0 0 0 5px rgba(195,152,11,1) inset;
+    }
+
+    ::-webkit-scrollbar-corner {
+        background: transparent;
+    }
+}

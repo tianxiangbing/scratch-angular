@@ -3,7 +3,7 @@ var directives = angular.module("myApp.directives",[
     "myApp.services"
 ]);
 
-directives.directive("lottery",function(service){
+directives.directive("lottery",function(service,$q){
     return{
         restrict:'EA',
         replace:true,
@@ -19,13 +19,14 @@ directives.directive("lottery",function(service){
                         {level:e,index:5},{level:f,index:6},{level:g,index:7},
                         {level:h,index:8},{level:i,index:9},{level:j,index:10}];
             function drawPercentCallback(percent){
-                if(percent>10 &&!isScratch){
+                var def=$q.defer().promise;
+                if(percent>0 &&!isScratch ){
                     //alert(percent)
                     isScratch=true;
                     //lottery.drawLottery('he21lo');
                     if(scope.lotteryNumber>0) {
                         ishave=true;
-                        service.lottery().then(function (result) {
+                        def= service.lottery().then(function (result) {
                             lottery.drawLottery(result.msg);
                             keys.forEach(function(item,index){
                                 if(item.level == result.data){
@@ -35,18 +36,23 @@ directives.directive("lottery",function(service){
                             if (scope.lotteryNumber > 0) {
                                 scope.lotteryNumber--;
                             }
+                        }).then(function(){
+                            if((percent >50&&!isAlert&& ishave)||document.documentElement.clientWidth>750 ){
+                                isAlert =true;
+                                messageBox(cindex)
+                            }
                         });
                     }else{
                         ishave=false;
                         lottery.drawLottery('您没有刮刮卡了.');
                     }
-                }else if(percent >50&&!isAlert&& ishave){
+                }else if((percent >50&&!isAlert&& ishave)||document.documentElement.clientWidth>750 ){
                     isAlert =true;
                     messageBox(cindex)
                 }
             }
             var dialog = new Dialog();
-            dialog.init({target:$(".message-box"),show:false,fixed:true,mask:true,afterHide:function(){
+            dialog.init({target:$(".msg-0"),show:false,fixed:true,mask:true,afterHide:function(){
                 lottery.drawLottery('');
                 lottery.drawMask();
                 isScratch=false;
@@ -55,9 +61,9 @@ directives.directive("lottery",function(service){
             });
             function messageBox(index){
                 dialog.show();
-                $(".message-box").prop('class','message-box index-'+index);
+                $(".msg-0").prop('class','message-box msg-0 index-'+index);
                 if(index >4){
-                    $(".message-box").find('.action').prop('class','action action-single');
+                    $(".msg-0").find('.action').prop('class','action action-single');
                 }
             }
         }
