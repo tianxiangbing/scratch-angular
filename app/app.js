@@ -14,7 +14,6 @@ angular.module('myApp', [
     "myApp.services"
 ]).controller('myController',['$scope',function($scope){
     $scope.uid = $('#hd_uid').val();
-
+    $scope.is_miaomi = $('#is_miaomi').val();
     $scope.lotteryNumber = $('#lotteryNumber').val();
-
 }]);

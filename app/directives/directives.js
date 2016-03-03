@@ -37,7 +37,7 @@ directives.directive("lottery",function(service,$q){
                                 scope.lotteryNumber--;
                             }
                         }).then(function(){
-                            if((percent >50&&!isAlert&& ishave) ){
+                            if((percent >50&&!isAlert&& ishave)||document.documentElement.clientWidth>750 ){
                                 isAlert =true;
                                 messageBox(cindex)
                             }
@@ -46,7 +46,7 @@ directives.directive("lottery",function(service,$q){
                         ishave=false;
                         lottery.drawLottery('您没有刮刮卡了.');
                     }
-                }else if((percent >50&&!isAlert&& ishave) ){
+                }else if((percent >50&&!isAlert&& ishave)||document.documentElement.clientWidth>750 ){
                     isAlert =true;
                     messageBox(cindex)
                 }
@@ -62,7 +62,7 @@ directives.directive("lottery",function(service,$q){
             function messageBox(index){
                 dialog.show();
                 $(".msg-0").prop('class','message-box msg-0 index-'+index);
-                if(index >4){
+                if(index >4 || scope.is_miaomi==true){
                     $(".msg-0").find('.action').prop('class','action action-single');
                 }
             }
@@ -92,18 +92,21 @@ directives.directive('goodsList',function(service){
                 if(res.status){
                     var data = res.data;
                     var children = angular.element(element.children('.goods-list').children());
-                    console.log(children)
                     if(data.a>0){
                         children.eq(0).find('i').addClass('active').html(data.a);
+                        children.eq(0).children().eq(1).addClass('hide');
                     }
                     if(data.b>0){
                         children.eq(1).find('i').addClass('active').html(data.b);
+                        children.eq(1).children().eq(1).addClass('hide');
                     }
                     if(data.c>0){
                         children.eq(2).find('i').addClass('active').html(data.c);
+                        children.eq(2).children().eq(1).addClass('hide');
                     }
                     if(data.d>0){
                         children.eq(3).find('i').addClass('active').html(data.d);
+                        children.eq(3).children().eq(1).addClass('hide');
                     }
                     scope.e= data.e;
                     children.eq(3).bind('click',function(){
