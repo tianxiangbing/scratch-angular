@@ -37,7 +37,7 @@ directives.directive("lottery",function(service,$q){
                                 scope.lotteryNumber--;
                             }
                         }).then(function(){
-                            if((percent >50&&!isAlert&& ishave)||document.documentElement.clientWidth>750 ){
+                            if((percent >50&&!isAlert&& ishave) ){
                                 isAlert =true;
                                 messageBox(cindex)
                             }
@@ -46,7 +46,7 @@ directives.directive("lottery",function(service,$q){
                         ishave=false;
                         lottery.drawLottery('您没有刮刮卡了.');
                     }
-                }else if((percent >50&&!isAlert&& ishave)||document.documentElement.clientWidth>750 ){
+                }else if((percent >50&&!isAlert&& ishave) ){
                     isAlert =true;
                     messageBox(cindex)
                 }
@@ -106,7 +106,7 @@ directives.directive('goodsList',function(service){
                         children.eq(3).find('i').addClass('active').html(data.d);
                     }
                     scope.e= data.e;
-                    children.eq(4).bind('click',function(){
+                    children.eq(3).bind('click',function(){
                         var dialog = new Dialog();
                         dialog.init({target:$('.msg-1'),show:true,fixed:true,mask:true});
                     });

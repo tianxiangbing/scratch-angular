@@ -5,7 +5,7 @@ function initFontSize() {
     if(document.documentElement.clientWidth>750){
         document.documentElement.style.fontSize = 970/7.5 + 'px';
     }
-}
+};
 initFontSize();
 $(window).on('resize', initFontSize);
 // Declare app level module which depends on views, and components

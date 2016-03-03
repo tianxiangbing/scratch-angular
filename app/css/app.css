@@ -42,7 +42,7 @@ header{height:8.7rem;}
 .goods-list .item-2{background: url("images/goods-2.png") no-repeat;background-size: contain;}
 .goods-list .item-3{background: url("images/goods-3.png") no-repeat;background-size: contain;}
 .goods-list .item-4{background: url("images/goods-4.png") no-repeat;background-size: contain;}
-.goods-list .item-5{background: url("images/goods-5.png") no-repeat;background-size: contain;}
+.goods-list .item-5{width:100%; background: url("images/goods-5.png") no-repeat;background-size: contain;}
 .goods-list .item-6{background: url("images/goods-6.png") no-repeat;background-size: contain;}
 .goods-list .item i{color:#fff690;font-size:.11rem;text-align: center;line-height: .5rem; position:absolute;width:.61rem;height:.63rem;background: url("images/icon-disabled.png") no-repeat;background-size: contain;position:absolute;right:.12rem;top:-.05rem;}
 .goods-list .item .active{background:url("images/icon-active.png") no-repeat;background-size: contain;}

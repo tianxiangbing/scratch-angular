@@ -137,7 +137,7 @@ Lottery.prototype = {
             this.backCtx.fillRect(0, 0, this.width, this.height);
             this.backCtx.restore();
             this.backCtx.save();
-            var fontSize = 30;
+            var fontSize =this.height/3;
             this.backCtx.font = 'Bold ' + fontSize + 'px Arial';
             this.backCtx.textAlign = 'center';
             this.backCtx.fillStyle = '#F60';
