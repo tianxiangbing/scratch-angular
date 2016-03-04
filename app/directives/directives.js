@@ -14,10 +14,10 @@ directives.directive("lottery",function(service,$q){
             lottery.init(lottery,'text');
             //lottery.drawLottery('helo');
             var isScratch = false,isAlert =false,cindex = 0,ishave =false;
-            var a = 1,b= 2,c= 3,d= 4,e= 5,f= 6,g= 7,h= 8,i= 9,j=10;
-            var keys = [{level:a,index:1},{level:b,index:2},{level:c,index:3},{level:d,index:4},
-                        {level:e,index:5},{level:f,index:6},{level:g,index:7},
-                        {level:h,index:8},{level:i,index:9},{level:j,index:10}];
+            var a = 1,b= 2,c= 3,d=4,e= 5,f= 6,g= 7,h= 8,i= 9,j=10;
+            var keys = [{level:a,index:6},{level:b,index:1},{level:c,index:4},{level:d,index:6},
+                        {level:e,index:9},{level:f,index:3},{level:g,index:10},
+                        {level:h,index:9},{level:i,index:8},{level:j,index:5}];
             function drawPercentCallback(percent){
                 var def=$q.defer().promise;
                 if(percent>0 &&!isScratch ){
