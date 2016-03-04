@@ -27,19 +27,27 @@ directives.directive("lottery",function(service,$q){
                     if(scope.lotteryNumber>0) {
                         ishave=true;
                         def= service.lottery().then(function (result) {
-                            lottery.drawLottery(result.msg);
-                            keys.forEach(function(item,index){
-                                if(item.level == result.data){
-                                    cindex= item.index;
+                            if(result.status==true){
+                                lottery.drawLottery(result.msg);
+                                keys.forEach(function(item,index){
+                                    if(item.level == result.data){
+                                        cindex= item.index;
+                                    }
+                                });
+                                if (scope.lotteryNumber > 0) {
+                                    scope.lotteryNumber--;
                                 }
-                            });
-                            if (scope.lotteryNumber > 0) {
-                                scope.lotteryNumber--;
+                            }else{
+                                alert(result.msg)
                             }
-                        }).then(function(){
-                            if((percent >50&&!isAlert&& ishave)||document.documentElement.clientWidth>750 ){
-                                isAlert =true;
-                                messageBox(cindex)
+                        }).then(function(result){
+                            if(result.status==true){
+                                if((percent >50&&!isAlert&& ishave)||document.documentElement.clientWidth>750 ){
+                                    isAlert =true;
+                                    messageBox(cindex)
+                                }
+                            }else{
+                                alert(result.msg)
                             }
                         });
                     }else{

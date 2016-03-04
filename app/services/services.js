@@ -4,13 +4,13 @@ services.service("service",function($q,$http){
     var data = {};
     return {
         getList: function (uid) {
-            return ajax(uid,'json/list.json');
+            return ajax(uid,'/pc/group-buy-lottery-gua-gua-ka/get-my-reward-list');
         },
         getRecordList:function(uid){
             return ajax(uid,'json/myRecordList.json');
         },
         lottery:function(uid){
-            return ajax(uid,'json/scratch.json');
+            return ajax(uid,'/pc/group-buy-lottery-gua-gua-ka/');
         },
         getGoodsList: function (uid) {
             //return ajax(uid,'json/goods-list.json');
@@ -18,15 +18,15 @@ services.service("service",function($q,$http){
             setTimeout(function(){
                 var data =  [
                     {
-                        "img":"css/images/carouse-1.jpg",
+                        "img":"http://ott.ewanse.com/kalemao_f2e/main/view/pc/scratch/css/images/carouse-1.jpg",
                         "url":"#"
                     },
                     {
-                        "img":"css/images/carouse-2.jpg",
+                        "img":"http://ott.ewanse.com/kalemao_f2e/main/view/pc/scratch/css/images/carouse-2.jpg",
                         "url":"#"
                     },
                     {
-                        "img":"css/images/carouse-3.jpg",
+                        "img":"http://ott.ewanse.com/kalemao_f2e/main/view/pc/scratch/css/images/carouse-3.jpg",
                         "url":"#"
                     }
                 ];
@@ -39,7 +39,7 @@ services.service("service",function($q,$http){
     function ajax (uid,url){
         var deferred = $q.defer();
         var path = url;
-        $http.get(path,{
+        $http.post(path,{
             params:{userId:uid}
         }).then(function (response) {
             if(response.status){
