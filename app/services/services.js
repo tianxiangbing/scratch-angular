@@ -11,6 +11,7 @@ services.service("service",function($q,$http){
         },
         lottery:function(uid){
             return ajax(uid,'/pc/group-buy-lottery-gua-gua-ka/');
+            //return ajax(uid,'json/scratch.json');
         },
         getGoodsList: function (uid) {
             //return ajax(uid,'json/goods-list.json');

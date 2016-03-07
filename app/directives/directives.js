@@ -15,7 +15,7 @@ directives.directive("lottery",function(service,$q){
             //lottery.drawLottery('helo');
             var isScratch = false,isAlert =false,cindex = 0,ishave =false;
             var a = 1,b= 2,c= 3,d=4,e= 5,f= 6,g= 7,h= 8,i= 9,j=10;
-            var keys = [{level:a,index:6},{level:b,index:1},{level:c,index:4},{level:d,index:6},
+            var keys = [{level:a,index:6},{level:b,index:1},{level:c,index:4},{level:d,index:11},
                         {level:e,index:9},{level:f,index:3},{level:g,index:10},
                         {level:h,index:9},{level:i,index:8},{level:j,index:5}];
             function drawPercentCallback(percent){
@@ -28,6 +28,7 @@ directives.directive("lottery",function(service,$q){
                         ishave=true;
                         def= service.lottery().then(function (result) {
                             if(result.status==true){
+                                getList(scope,service);
                                 lottery.drawLottery(result.msg);
                                 keys.forEach(function(item,index){
                                     if(item.level == result.data){
@@ -40,7 +41,6 @@ directives.directive("lottery",function(service,$q){
                             }else{
                                 alert(result.msg)
                             }
-                        }).then(function(result){
                             if(result.status==true){
                                 if((percent >50&&!isAlert&& ishave)||document.documentElement.clientWidth>750 ){
                                     isAlert =true;
@@ -49,12 +49,14 @@ directives.directive("lottery",function(service,$q){
                             }else{
                                 alert(result.msg)
                             }
+                        }).catch(function(){
+                            alert('请求出错');
                         });
                     }else{
                         ishave=false;
                         lottery.drawLottery('您没有刮刮卡了.');
                     }
-                }else if((percent >50&&!isAlert&& ishave)||document.documentElement.clientWidth>750 ){
+                }else if((percent >50&&!isAlert&& ishave)|| (document.documentElement.clientWidth>750&&!isAlert &&ishave)){
                     isAlert =true;
                     messageBox(cindex)
                 }
@@ -95,39 +97,43 @@ directives.directive('goodsList',function(service){
         replace:true,
         templateUrl:'template/goods-list.html',
         link:function(scope,element,attrs){
-            service.getList(scope.uid).then(function(res){
-                //scope.list = res.data;
-                if(res.status){
-                    var data = res.data;
-                    var children = angular.element(element.children('.goods-list').children());
-                    if(data.a>0){
-                        children.eq(0).find('i').addClass('active').html(data.a);
-                        children.eq(0).children().eq(1).addClass('hide');
-                    }
-                    if(data.b>0){
-                        children.eq(1).find('i').addClass('active').html(data.b);
-                        children.eq(1).children().eq(1).addClass('hide');
-                    }
-                    if(data.c>0){
-                        children.eq(2).find('i').addClass('active').html(data.c);
-                        children.eq(2).children().eq(1).addClass('hide');
-                    }
-                    if(data.d>0){
-                        children.eq(3).find('i').addClass('active').html(data.d);
-                        children.eq(3).children().eq(1).addClass('hide');
-                    }
-                    scope.e= data.e;
-                    children.eq(3).bind('click',function(){
-                        var dialog = new Dialog();
-                        dialog.init({target:$('.msg-1'),show:true,fixed:true,mask:true});
-                    });
-                }else{
-                    alert(res.msg);
-                }
-            });
+            getList(scope,service);
         }
     }
 });
+function getList(scope,service){
+    service.getList(scope.uid).then(function(res){
+        //scope.list = res.data;
+        if(res.status){
+            var data = res.data;
+            var children = angular.element(element.children('.goods-list').children());
+            if(data.a>0){
+                children.eq(0).find('i').addClass('active').html(data.a);
+                children.eq(0).children().eq(1).addClass('hide');
+            }
+            if(data.b>0){
+                children.eq(1).find('i').addClass('active').html(data.b);
+                children.eq(1).children().eq(1).addClass('hide');
+            }
+            if(data.c>0){
+                children.eq(2).find('i').addClass('active').html(data.c);
+                children.eq(2).children().eq(1).addClass('hide');
+            }
+            if(data.d>0){
+                children.eq(3).find('i').addClass('active').html(data.d);
+                children.eq(3).children().eq(1).addClass('hide');
+            }
+            scope.e= data.e;
+            children.eq(3).bind('click',function(){
+                $("body").scrollTop(0);
+                var dialog = new Dialog();
+                dialog.init({target:$('.msg-1'),show:true,mask:true,fixed:false});
+            });
+        }else{
+            alert(res.msg);
+        }
+    });
+}
 directives.directive('rule',function(){
    return {
        restrict:'EA',
