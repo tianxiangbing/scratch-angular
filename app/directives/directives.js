@@ -42,7 +42,7 @@ directives.directive("lottery",function(service,$q){
                                 alert(result.msg)
                             }
                             if(result.status==true){
-                                if((percent >50&&!isAlert&& ishave)||document.documentElement.clientWidth>750 ){
+                                if((percent >20&&!isAlert&& ishave)){
                                     isAlert =true;
                                     messageBox(cindex)
                                 }
@@ -56,25 +56,31 @@ directives.directive("lottery",function(service,$q){
                         ishave=false;
                         lottery.drawLottery('您没有刮刮卡了.');
                     }
-                }else if((percent >50&&!isAlert&& ishave)|| (document.documentElement.clientWidth>750&&!isAlert &&ishave)){
+                }else if((percent >20&&!isAlert&& ishave)){
                     isAlert =true;
                     messageBox(cindex)
                 }
             }
             var dialog = new Dialog();
-            dialog.init({target:$(".msg-0"),show:false,fixed:true,mask:true,afterHide:function(){
+            dialog.init({target:$(".msg-0"),show:false,fixed:true,mask:true,beforeHide:function(){
+                $(".msg-0").prop('class', 'message-box msg-0');
+            },afterHide:function(){
                 lottery.drawLottery('');
                 lottery.drawMask();
                 isScratch=false;
                 isAlert =false;
+                $(".msg-0")[0].className='message-box msg-0';
             }
             });
             function messageBox(index){
-                dialog.show();
-                $(".msg-0").prop('class','message-box msg-0 index-'+index);
+                $(".msg-0")[0].className='message-box msg-0';
+                $(".msg-0").addClass('index-'+index);
                 if(index >4 || scope.is_miaomi==true){
                     $(".msg-0").find('.action').prop('class','action action-single');
+                }else{
+                    $(".msg-0").find('.action').prop('class','action');
                 }
+                dialog.show();
             }
         }
     }
@@ -106,7 +112,7 @@ function getList(scope,service){
         //scope.list = res.data;
         if(res.status){
             var data = res.data;
-            var children = angular.element(element.children('.goods-list').children());
+            var children = $('.goods-list').children();
             if(data.a>0){
                 children.eq(0).find('i').addClass('active').html(data.a);
                 children.eq(0).children().eq(1).addClass('hide');

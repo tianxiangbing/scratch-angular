@@ -14,6 +14,7 @@ header{height:8.7rem;}
 .msg-1 .history{width:3.95rem;position:absolute;top:7.7rem;left:2.12rem;color:#ed2d50;font-size:.25rem;height:1.6rem;overflow: auto;}
 
 .message-box .action{font-size:20px;color:#c51838;position:absolute;top:5.8rem;width:4.5rem;height:.63rem;left:1.6rem;}
+.message-box .action-single{top:5.3rem;}
 .action .virtual{text-decoration:none; color:#c51838;display:block; width:2.8rem;height:.63rem;float:left;line-height:.63rem;}
 .action .agin{cursor: pointer; text-decoration:none;display:block; width:1.7rem;height:.63rem;line-height:.63rem;float:left;text-align: center;}
 .action-single .virtual{display:none;}
