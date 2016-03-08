@@ -6,20 +6,19 @@ ul{overflow:hidden;margin:0;padding:0;}
 ul,li{list-style: none;}
 header{height:8.7rem;}
 #lotteryContainer{width:6.25rem;height: 1.88rem;position:relative;margin:0.25rem auto 0;}
-.message-box{width:7.5rem;height: 7.48rem;position:relative;background-size:100%;background-size:contain !important;}
+.message-box,.message-box .index{width:7.5rem;height: 7.48rem;position:relative;background-size:100%;background-size:contain !important;}
 .message-box .close{display:block;position:absolute;width:58px;height:58px;right:0px;top:.1rem;cursor: pointer;}
-
-.msg-1{font-size:12px;width:7rem;height:11rem;background:url("images/sum-8.png") no-repeat center center;position:relative;}
+/*.message-box .index{position:absolute;top:0;left:0;z-index: -1}*/
+.msg-1{font-size:12px;width:7rem;height:11rem;background:url("images/sum-8.png") no-repeat 0.25rem center;position:relative;}
 .msg-1 .money{position:absolute;top:4.8rem;left:2.28rem;width:3rem;height:1.8rem;line-height:1.83rem;text-align:center;color:#ed2d50;font-size:.8rem;}
-.msg-1 .history{width:3.95rem;position:absolute;top:7.7rem;left:2.12rem;color:#ed2d50;font-size:.25rem;height:1.6rem;overflow: auto;}
+.msg-1 .history{width:2.95rem;position:absolute;top:7.7rem;left:2.42rem;color:#ed2d50;font-size:.25rem;height:1.6rem;overflow: auto;}
 
-.message-box .action{font-size:20px;color:#c51838;position:absolute;top:5.8rem;width:4.5rem;height:.63rem;left:1.6rem;}
+.message-box .action{font-size:16px;color:#c51838;position:absolute;top:5.8rem;width:4.5rem;height:.63rem;left:1.6rem;}
 .message-box .action-single{top:5.3rem;}
-.action .virtual{text-decoration:none; color:#c51838;display:block; width:2.8rem;height:.63rem;float:left;line-height:.63rem;}
+.action .virtual{text-align: center;text-decoration:none; color:#c51838;display:block; width:2.8rem;height:.63rem;float:left;line-height:.63rem;}
 .action .agin{cursor: pointer; text-decoration:none;display:block; width:1.7rem;height:.63rem;line-height:.63rem;float:left;text-align: center;}
 .action-single .virtual{display:none;}
 .action-single .agin{width:4.5rem;}
-
 .index-1{background:url("images/index-1.png") no-repeat center center;}
 .index-2{background:url("images/index-2.png") no-repeat center center;}
 .index-3{background:url("images/index-3.png") no-repeat center center;}
@@ -45,17 +44,18 @@ header{height:8.7rem;}
 .goods-list .item-4{background: url("images/goods-4.png") no-repeat;background-size: contain;}
 .goods-list .item-5{width:100%; background: url("images/goods-5.png") no-repeat;background-size: contain;}
 .goods-list .item-6{background: url("images/goods-6.png") no-repeat;background-size: contain;}
-.goods-list .item i{color:#fff690;font-size:.11rem;text-align: center;line-height: .5rem; position:absolute;width:.61rem;height:.63rem;background: url("images/icon-disabled.png") no-repeat;background-size: contain;position:absolute;right:.12rem;top:-.05rem;}
+.goods-list .item i{color:#fff690;font-size:16px;text-align: center;line-height: .5rem; position:absolute;width:.61rem;height:.63rem;background: url("images/icon-disabled.png") no-repeat;background-size: contain;position:absolute;right:.12rem;top:-.05rem;}
 .goods-list .item .active{background:url("images/icon-active.png") no-repeat;background-size: contain;}
 .goods-list .item .mask{width:100%;background-color:#333;height:100%;position:absolute;opacity: .3;}
 
-.rule{margin-top:2.35rem;font-size:.086rem;color:#cf1f1f;padding:0 .9rem;height:5.7rem;}
-.rule h2{text-align:center;margin:0 0 .1rem 0;}
+.rule{margin-top:2.45rem;font-size:13px;color:#cf1f1f;padding:0 .9rem;height:5.7rem;}
+.rule h2{text-align:center;margin:0 0 .1rem 0;font-size: 18px;}
 .rule p{line-height:.5rem;margin:0; }
 .carousel-content{width:7.26rem;height:3.23rem;margin:1.4rem auto 0;overlfow:hidden;}
 .carousel-image img{margin:0;width:7.26rem;height:3.23rem;}
 .link-btn{background:url("images/link-btn.png") no-repeat;display: block;margin:.2rem auto 0 auto;width:3.8rem;height:.85rem;background-size: contain;}
 .get-card{color:#ffee56;font-size:14px;line-height:24px;text-align: center;}
+.ui-dialog-close{font-size:0;display:block;cursor:pointer; background:url("images/icon-close.png") no-repeat;width:48px;height:48px;position:absolute;right:-30px;top:-30px;background-size:100% 100%;}
 @media screen and (min-width:750px){
     body{background: url("images/bg-big.jpg") no-repeat center top;background-color:#fa407d ;}
     .container{width:970px;margin:0 auto;padding-bottom:.2rem;}

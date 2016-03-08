@@ -5,6 +5,7 @@ services.service("service",function($q,$http){
     return {
         getList: function (uid) {
             return ajax(uid,'/pc/group-buy-lottery-gua-gua-ka/get-my-reward-list');
+            //return ajax(uid,'json/list.json');
         },
         getRecordList:function(uid){
             return ajax(uid,'json/myRecordList.json');
@@ -19,15 +20,7 @@ services.service("service",function($q,$http){
             setTimeout(function(){
                 var data =  [
                     {
-                        "img":"http://ott.ewanse.com/kalemao_f2e/main/view/pc/scratch/css/images/carouse-1.jpg",
-                        "url":"#"
-                    },
-                    {
-                        "img":"http://ott.ewanse.com/kalemao_f2e/main/view/pc/scratch/css/images/carouse-2.jpg",
-                        "url":"#"
-                    },
-                    {
-                        "img":"http://ott.ewanse.com/kalemao_f2e/main/view/pc/scratch/css/images/carouse-3.jpg",
+                        "img":"http://ott.ewanse.com/kalemao_f2e/main/view/pc/scratch/css/images/cross.jpg",
                         "url":"#"
                     }
                 ];

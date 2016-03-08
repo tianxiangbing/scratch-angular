@@ -13,7 +13,7 @@ directives.directive("lottery",function(service,$q){
             lottery.maskText="刮开此图层";
             lottery.init(lottery,'text');
             //lottery.drawLottery('helo');
-            var isScratch = false,isAlert =false,cindex = 0,ishave =false;
+            var isScratch = false,isAjax = false,isAlert =false,cindex = 0,ishave =false;
             var a = 1,b= 2,c= 3,d=4,e= 5,f= 6,g= 7,h= 8,i= 9,j=10;
             var keys = [{level:a,index:6},{level:b,index:1},{level:c,index:4},{level:d,index:11},
                         {level:e,index:9},{level:f,index:3},{level:g,index:10},
@@ -35,16 +35,14 @@ directives.directive("lottery",function(service,$q){
                                         cindex= item.index;
                                     }
                                 });
+                                //alert(cindex)
+                                isAjax = true;
                                 if (scope.lotteryNumber > 0) {
                                     scope.lotteryNumber--;
                                 }
-                            }else{
-                                alert(result.msg)
-                            }
-                            if(result.status==true){
                                 if((percent >20&&!isAlert&& ishave)){
-                                    isAlert =true;
-                                    messageBox(cindex)
+                                   // isAlert =true;
+                                    //messageBox(cindex)
                                 }
                             }else{
                                 alert(result.msg)
@@ -56,25 +54,28 @@ directives.directive("lottery",function(service,$q){
                         ishave=false;
                         lottery.drawLottery('您没有刮刮卡了.');
                     }
-                }else if((percent >20&&!isAlert&& ishave)){
+                }else if(percent >20&&!isAlert&& ishave && isAjax){
                     isAlert =true;
                     messageBox(cindex)
                 }
             }
             var dialog = new Dialog();
             dialog.init({target:$(".msg-0"),show:false,fixed:true,mask:true,beforeHide:function(){
-                $(".msg-0").prop('class', 'message-box msg-0');
+                //$(".msg-0").prop('class', 'message-box msg-0');
             },afterHide:function(){
                 lottery.drawLottery('');
                 lottery.drawMask();
                 isScratch=false;
                 isAlert =false;
-                $(".msg-0")[0].className='message-box msg-0';
+                isAjax =false;
+                //$(".msg-0")[0].className='message-box msg-0';
             }
             });
             function messageBox(index){
-                $(".msg-0")[0].className='message-box msg-0';
-                $(".msg-0").addClass('index-'+index);
+                $(".msg-0").prop('class','message-box msg-0 index-'+index);
+                //alert(index)
+                //$('.msg-0').find('.index').remove();
+                //$('.msg-0').append('<div class="index index-'+index+'"/>');
                 if(index >4 || scope.is_miaomi==true){
                     $(".msg-0").find('.action').prop('class','action action-single');
                 }else{
@@ -130,6 +131,7 @@ function getList(scope,service){
                 children.eq(3).children().eq(1).addClass('hide');
             }
             scope.e= data.e;
+            children.eq(3).unbind('click');
             children.eq(3).bind('click',function(){
                 $("body").scrollTop(0);
                 var dialog = new Dialog();
