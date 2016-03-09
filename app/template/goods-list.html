@@ -1,0 +1,27 @@
+<div>
+<div class="goods-list">
+    <a class="item item-1">
+        <i></i>
+        <div class="mask"></div>
+    </a>
+    <a class="item item-2">
+        <i></i>
+        <div class="mask"></div>
+    </a>
+    <a class="item item-3">
+        <i></i>
+        <div class="mask"></div>
+    </a>
+    <div class="item item-5">
+    </div>
+</div>
+    <div class="hide">
+        <div class="message-box msg-1">
+            <a class="close js-dialog-close"></a>
+            <div class="money">{{e.money}}</div>
+            <div class="history">
+                <div class="item" ng-repeat="item in e.history  track by $index">第 {{$index+1}} 次获得：{{item}}</div>
+            </div>
+        </div>
+    </div>
+</div>
