@@ -21,7 +21,7 @@ services.service("service",function($q,$http){
                 var data =  [
                     {
                         "img":"http://ott.ewanse.com/kalemao_f2e/main/view/pc/scratch/css/images/cross.jpg",
-                        "url":"#"
+                        "url":"http://kalemao.ewanse.com/pc/group-buy/index?goods_name=%E7%98%A6%E8%BA%AB%E5%AD%A3"
                     }
                 ];
                 deferred.resolve({status:true,data:data});
