@@ -15,6 +15,7 @@ header{height:8.7rem;}
 
 .message-box .action{font-size:16px;color:#c51838;position:absolute;top:5.8rem;width:4.5rem;height:.63rem;left:1.6rem;}
 .message-box .action-single{top:5.3rem;}
+
 .action .virtual{text-align: center;text-decoration:none; color:#c51838;display:block; width:2.8rem;height:.63rem;float:left;line-height:.63rem;}
 .action .agin{cursor: pointer; text-decoration:none;display:block; width:1.7rem;height:.63rem;line-height:.63rem;float:left;text-align: center;}
 .action-single .virtual{display:none;}
@@ -22,6 +23,9 @@ header{height:8.7rem;}
 .index-1{background:url("images/index-1.png") no-repeat center center;}
 .index-2{background:url("images/index-2.png") no-repeat center center;}
 .index-3{background:url("images/index-3.png") no-repeat center center;}
+.index-1 .action-single{top:5.8rem;}
+.index-2 .action-single{top:5.8rem;}
+.index-3 .action-single{top:5.8rem;}
 .index-4{background:url("images/index-4.png") no-repeat center center;}
 .index-5{background:url("images/index-5.png") no-repeat center center;}
 .index-6{background:url("images/index-6.png") no-repeat center center;}
@@ -60,7 +64,7 @@ header{height:8.7rem;}
     body{background: url("images/bg-big.jpg") no-repeat center top;background-color:#fa407d ;}
     .container{width:970px;margin:0 auto;padding-bottom:.2rem;}
     header{height:4.5rem;}
-    .rule{margin-top:3rem;font-size:0;}
+    .rule,.rule h2{margin-top:3rem;font-size:0;}
     .goods-list{padding-left:0.1rem;}
     .message-box .js-dialog-close{width:80px;height:80px;}
     .goods-list .item i{font-size:28px;}

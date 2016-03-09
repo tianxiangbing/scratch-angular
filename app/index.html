@@ -16,15 +16,15 @@
 <body ng-controller="myController">
 <div class="container">
   <input type="hidden" id="lotteryNumber" value="13"/>
-  <input type="hidden" id="is_miaomi" value="0"/>
+  <input type="hidden" id="is_miaomi" value="1"/>
   <header></header>
   <lottery></lottery>
   <lottery-count counter="lotteryNumber"></lottery-count>
   <goods-list></goods-list>
   <rule class="rule"></rule>
   <goods-preview></goods-preview>
-  <a href="#" class="link-btn" ng-show="{{is_miaomi}}"></a>
-  <div class="get-card" ng-hide="{{is_miaomi}}">如何获取刮刮卡？喵秘搜索"瘦身季",购买商品</div>
+  <a href="#" class="link-btn" ng-hide="{{is_miaomi}}"></a>
+  <div class="get-card" ng-show="{{is_miaomi}}">如何获取刮刮卡？喵秘搜索"瘦身季",购买商品</div>
   <footer></footer>
   <div class="hide">
     <div class="message-box msg-0">

@@ -4,15 +4,15 @@ services.service("service",function($q,$http){
     var data = {};
     return {
         getList: function (uid) {
-            return ajax(uid,'/pc/group-buy-lottery-gua-gua-ka/get-my-reward-list');
-            //return ajax(uid,'json/list.json');
+            //return ajax(uid,'/pc/group-buy-lottery-gua-gua-ka/get-my-reward-list');
+            return ajax(uid,'json/list.json');
         },
         getRecordList:function(uid){
             return ajax(uid,'json/myRecordList.json');
         },
         lottery:function(uid){
-            return ajax(uid,'/pc/group-buy-lottery-gua-gua-ka/');
-            //return ajax(uid,'json/scratch.json');
+            //return ajax(uid,'/pc/group-buy-lottery-gua-gua-ka/');
+            return ajax(uid,'json/scratch.json');
         },
         getGoodsList: function (uid) {
             //return ajax(uid,'json/goods-list.json');
@@ -21,7 +21,7 @@ services.service("service",function($q,$http){
                 var data =  [
                     {
                         "img":"http://ott.ewanse.com/kalemao_f2e/main/view/pc/scratch/css/images/cross.jpg",
-                        "url":"http://kalemao.ewanse.com/pc/group-buy/index?goods_name=%E7%98%A6%E8%BA%AB%E5%AD%A3"
+                        "url":"#"
                     }
                 ];
                 deferred.resolve({status:true,data:data});
@@ -33,7 +33,7 @@ services.service("service",function($q,$http){
     function ajax (uid,url){
         var deferred = $q.defer();
         var path = url;
-        $http.post(path,{
+        $http.get(path,{
             params:{userId:uid}
         }).then(function (response) {
             if(response.status){
