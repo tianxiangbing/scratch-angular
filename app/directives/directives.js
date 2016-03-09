@@ -15,7 +15,7 @@ directives.directive("lottery",function(service,$q){
             //lottery.drawLottery('helo');
             var isScratch = false,isAjax = false,isAlert =false,cindex = 0,ishave =false;
             var a = 1,b= 2,c= 3,d=4,e= 5,f= 6,g= 7,h= 8,i= 9,j=10;
-            var keys = [{level:a,index:6},{level:b,index:1},{level:c,index:4},{level:d,index:11},
+            var keys = [{level:a,index:6},{level:b,index:1},{level:c,index:2},{level:d,index:11},
                         {level:e,index:9},{level:f,index:3},{level:g,index:10},
                         {level:h,index:9},{level:i,index:8},{level:j,index:5}];
             function drawPercentCallback(percent){

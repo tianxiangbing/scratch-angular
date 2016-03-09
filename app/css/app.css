@@ -34,7 +34,7 @@ header{height:8.7rem;}
 .lottery-count{text-align: center;vertical-align: middle;margin-top:.1rem;}
 .lottery-count .left{display:inline-block;width:1rem;height:.32rem;background: url("images/count-left.png") no-repeat;background-size: contain;}
 .lottery-count .right{display:inline-block;width:1.34rem;height:.32rem;background: url("images/count-right.png") no-repeat;background-size: contain;}
-.lottery-count .text{vertical-align: .05rem;display:inline-block;font-size: .2rem;color:#fa407d;background-color:#fef159;border-radius: 4px;padding:.05rem .08rem;}
+.lottery-count .text{vertical-align: .05rem;display:inline-block;font-size:18px;font-weight: bold; color:#fa407d;background-color:#fef159;border-radius: 4px;padding:.05rem .08rem;}
 
 .goods-list{margin-top:.2rem; background-color:#b90741;padding:0.15rem .05rem;min-height:.5rem;overflow:hidden;}
 .goods-list .item{width:2.38rem;height:2.38rem;margin:0 .07rem .15rem 0;float:left;position:relative;}
@@ -63,6 +63,8 @@ header{height:8.7rem;}
     .rule{margin-top:3rem;font-size:0;}
     .goods-list{padding-left:0.1rem;}
     .message-box .js-dialog-close{width:80px;height:80px;}
+    .goods-list .item i{font-size:28px;}
+    .lottery-count .text{font-size:34px;}
     .msg-0{width:501px;height:501px;}
     .msg-1{width:785px;height:800px;background-position: center center;}
     .msg-1 .money{left:290px;top:350px;font-size: 60px;width:260px;height:120px;line-height: 120px;}
