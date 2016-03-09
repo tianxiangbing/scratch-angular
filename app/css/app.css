@@ -55,18 +55,18 @@ header{height:8.7rem;}
 .carousel-image img{margin:0;width:7.26rem;height:3.23rem;}
 .link-btn{background:url("images/link-btn.png") no-repeat;display: block;margin:.2rem auto 0 auto;width:3.8rem;height:.85rem;background-size: contain;}
 .get-card{color:#ffee56;font-size:14px;line-height:24px;text-align: center;}
-.ui-dialog-close{font-size:0;display:block;cursor:pointer; background:url("images/icon-close.png") no-repeat;width:48px;height:48px;position:absolute;right:-30px;top:-30px;background-size:100% 100%;}
+.ui-dialog-close{font-size:0;display:block;cursor:pointer; background:url("images/icon-close.png") no-repeat;width:48px;height:48px;position:absolute;right:-30px;top:30px;background-size:100% 100%;}
 @media screen and (min-width:750px){
     body{background: url("images/bg-big.jpg") no-repeat center top;background-color:#fa407d ;}
     .container{width:970px;margin:0 auto;padding-bottom:.2rem;}
     header{height:4.5rem;}
     .rule{margin-top:3rem;font-size:0;}
     .goods-list{padding-left:0.1rem;}
-    .message-box .js-dialog-close{top:.5rem;width:80px;height:80px;}
+    .message-box .js-dialog-close{width:80px;height:80px;}
     .msg-0{width:501px;height:501px;}
-    .msg-1{width:785px;height:800px;}
+    .msg-1{width:785px;height:800px;background-position: center center;}
     .msg-1 .money{left:290px;top:350px;font-size: 60px;width:260px;height:120px;line-height: 120px;}
-    .msg-1 .history{top:560px;width:250px;height:100px; font-size:14px;line-height:24px;}
+    .msg-1 .history{left:340px; top:570px;width:200px;height:100px; font-size:14px;line-height:24px;}
     .message-box .action{font-weight: bold; top:3rem;left:.9rem;width:2.3rem;height:.3rem;}
     .message-box .action .agin{text-align:center; color:#c51838;height:.3rem;line-height:.3rem;width:.85rem;}
     .message-box .action-single{ top:2.77rem;left:.8rem;}
